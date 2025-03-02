@@ -1,1 +1,152 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulwahid Ali - Backend Developer</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 3px solid var(--primary);
+        }
+        h1 { color: var(--primary); }
+        h2 { color: var(--secondary); }
+        .contact {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        section { margin: 2rem 0; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a { color: var(--secondary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+       
+        <h1>Abdulwahid Ali</h1>
+        <h2>Back-End Developer</h2>
+        <div class="contact">
+            <span>📍 Samara, Afar, Ethiopia</span>
+            <a href="tel:+251-921-58-22-49">📞 +251-921-58-22-49</a>
+            <a href="mailto:abusabrina2158@gmail.com">📧 Email</a>
+            <a href="https://github.com/awahid-ali" target="_blank" rel="noopener">🐱 GitHub</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>🚀 Summary</h2>
+        <p>Back-End developer with 4+ years experience designing scalable web applications and RESTful APIs. Skilled in Python, Django, FastAPI and process automation with proven track record of efficiency improvements.</p>
+    </section>
+
+    <section>
+        <h2>💻 Technical Skills</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Languages</h3>
+                <p>Python, JavaScript</p>
+            </div>
+            <div class="card">
+                <h3>Frameworks</h3>
+                <p>Django, DRF, FastAPI, Vue.js</p>
+            </div>
+            <div class="card">
+                <h3>Databases</h3>
+                <p>MySQL, PostgreSQL</p>
+            </div>
+            <div class="card">
+                <h3>Tools</h3>
+                <p>Git, Linux, AWS, Docker</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>💼 Professional Experience</h2>
+        <div class="card">
+            <h3>Arho Technology (2020-Present)</h3>
+            <ul>
+                <li>Developed License & Tax Management System for Afar Mine Resources Bureau</li>
+                <li>Created HR Management System for Afar Sharia Supreme Court</li>
+                <li>Built data collection API with DRF (40% performance improvement)</li>
+                <li>Consulted on 12+ client projects, delivering tailored technical solutions for government and private sector organizations</li>
+                <li>Conducted training programs for 15+ organizations on system implementation and software development best practices</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Afar Urban Development Bureau (2019–2023)</h3>
+            <ul>
+                <li>Led team of 7 developers in digital transformation initiative, overseeing sector-wide digitization of government services</li>
+                <li>Developed Construction Project Management System</li>
+                <li>Automated reporting systems (90% workload reduction)</li>
+                <li>Created File Management System (70% faster retrieval)</li>
+                
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎓 Education</h2>
+        <div class="card">
+            <h3>MSc in Computer Science (Ongoing)</h3>
+            <p>Samara University | 2024–2026 (Expected)</p>
+        </div>
+        <div class="card">
+            <h3>BSc in Electrical and Computer Engineering</h3>
+            <p>Woldia University (2014–2019)</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🏆 Achievements</h2>
+        <div class="card">
+            <h3>2024 - 3rd National Cyber Talent Participant</h3>
+            <p>Certificate of Participation in Information Network Security Administration<br>
+            August 2024 - January 2025</p>
+            <ul>
+                <li>Selected among top cybersecurity talents nationwide</li>
+                <li>Advanced training in network security infrastructure and cyber defense mechanisms</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>2020 - Certificate of Recognition (Level 1)</h3>
+            <p>Awarded by Afar Urban Development and Construction Bureau for successfully automating project and file management processes.</p>
+        </div>
+    </section>
+
+   <footer style="text-align: center; margin: 2rem 0; color: #666;">
+    <!-- Year will be injected by JavaScript -->
+</footer>
+
+<script>
+    // Dynamic year update
+    document.querySelector('footer').innerHTML = 
+        `© ${new Date().getFullYear()} Abdulwahid Ali. All rights reserved.`;
+</script>
+</body>
+</html>
