@@ -3,150 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulwahid Ali - Backend Developer</title>
+    <title>Abdulwahid Ali Ebrahim – Senior Python (AI / Backend) Developer</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
+            --primary: #1a2b3c;
+            --accent: #2980b9;
+            --light-bg: #f4f7fa;
+            --border: #d1dce8;
+            --text: #333;
+            --muted: #666;
         }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.65;
+            background: #fff;
+            max-width: 860px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 36px 28px;
         }
+
+        /* ── Header ── */
         header {
             text-align: center;
-            padding: 2rem 0;
+            padding-bottom: 1.4rem;
             border-bottom: 3px solid var(--primary);
+            margin-bottom: 1.8rem;
         }
-        h1 { color: var(--primary); }
-        h2 { color: var(--secondary); }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.05rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin: 6px 0 12px;
+        }
+
         .contact {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            color: var(--muted);
         }
-        section { margin: 2rem 0; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
         }
-        .card {
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+
+        .contact a:hover { text-decoration: underline; }
+
+        /* ── Section headings ── */
+        section { margin-bottom: 1.8rem; }
+
+        section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 5px;
+            margin-bottom: 1rem;
         }
-        a { color: var(--secondary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+
+        /* ── Skills grid ── */
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .skills-list li { font-size: 0.93rem; }
+        .skills-list li strong { color: var(--primary); }
+
+        /* ── Experience / Project blocks ── */
+        .entry { margin-bottom: 1.2rem; }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .entry-title {
+            font-weight: 700;
+            font-size: 0.97rem;
+            color: var(--primary);
+        }
+
+        .entry-org {
+            font-size: 0.93rem;
+            color: var(--muted);
+        }
+
+        .entry-date {
+            font-size: 0.87rem;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .entry-subtitle {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin: 2px 0 6px;
+        }
+
+        .entry p {
+            font-size: 0.93rem;
+            margin-bottom: 6px;
+        }
+
+        .entry ul {
+            padding-left: 1.3rem;
+            font-size: 0.93rem;
+        }
+
+        .entry ul li { margin-bottom: 4px; }
+
+        /* ── Education rows ── */
+        .edu-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.93rem;
+        }
+
+        .edu-row strong { color: var(--primary); }
+        .edu-row span { color: var(--muted); }
+
+        /* ── Soft skills ── */
+        .soft-list {
+            list-style: disc;
+            padding-left: 1.3rem;
+            font-size: 0.93rem;
+        }
+
+        .soft-list li { margin-bottom: 3px; }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            body { padding: 20px 14px; }
+            header h1 { font-size: 1.5rem; }
+            .entry-header { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- ── Header ── -->
     <header>
-       
-        <h1>Abdulwahid Ali</h1>
-        <h2>Back-End Developer</h2>
+        <h1>Abdulwahid Ali Ebrahim</h1>
+        <div class="subtitle">Senior Python (AI / Backend) Developer</div>
         <div class="contact">
-            <span>📍 Samara, Afar, Ethiopia</span>
-            <a href="tel:+251-921-58-22-49">📞 +251-921-58-22-49</a>
-            <a href="mailto:abusabrina2158@gmail.com">📧 Email</a>
-            <a href="https://github.com/awahid-ali" target="_blank" rel="noopener">🐱 GitHub</a>
+            <span>📧 <a href="mailto:abusabrina2158@gmail.com">abusabrina2158@gmail.com</a></span>
+            <span>📞 <a href="tel:+251921582249">+251-921-58-22-49</a></span>
+            <span>📍 Ethiopia (Remote)</span>
+            <span>🔗 <a href="https://linkedin.com/in/abdulwahid-ali" target="_blank" rel="noopener">LinkedIn</a></span>
+            <span>💻 <a href="https://github.com/awahid-ali" target="_blank" rel="noopener">GitHub</a></span>
         </div>
     </header>
 
+    <!-- ── Professional Summary ── -->
     <section>
-        <h2>🚀 Summary</h2>
-        <p>Back-End developer with 4+ years experience designing scalable web applications and RESTful APIs. Skilled in Python, Django, FastAPI and process automation with proven track record of efficiency improvements.</p>
+        <h2>Professional Summary</h2>
+        <p>Senior Python Developer with 5+ years of experience designing and delivering scalable backend systems and AI-powered platforms. Strong background in Python, RESTful APIs, asynchronous programming, and data-driven applications. Experienced in building proof-of-concept (POC) solutions and evolving them into production-ready systems. Actively developing Generative AI solutions for education and enterprise workflows, with a focus on performance, security, and maintainability.</p>
     </section>
 
+    <!-- ── Education ── -->
     <section>
-        <h2>💻 Technical Skills</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Languages</h3>
-                <p>Python, JavaScript</p>
-            </div>
-            <div class="card">
-                <h3>Frameworks</h3>
-                <p>Django, DRF, FastAPI, Vue.js</p>
-            </div>
-            <div class="card">
-                <h3>Databases</h3>
-                <p>MySQL, PostgreSQL</p>
-            </div>
-            <div class="card">
-                <h3>Tools</h3>
-                <p>Git, Linux, AWS, Docker</p>
-            </div>
+        <h2>Education</h2>
+        <div class="edu-row">
+            <span><strong>MSc in Computer Science</strong> – Samara University, Ethiopia</span>
+            <span>2024 – 2026</span>
+        </div>
+        <div class="edu-row">
+            <span><strong>BSc in Electrical and Computer Engineering</strong> – Woldia University, Ethiopia</span>
+            <span>2014 – 2019</span>
         </div>
     </section>
 
+    <!-- ── Technical Skills ── -->
     <section>
-        <h2>💼 Professional Experience</h2>
-        <div class="card">
-            <h3>Arho Technology (2020-Present)</h3>
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+            <li><strong>Languages:</strong> Python, JavaScript, PHP</li>
+            <li><strong>Backend Frameworks:</strong> Django, Django REST Framework, FastAPI</li>
+            <li><strong>AI &amp; Data:</strong> Generative AI, Prompt Engineering, Pandas, NumPy, Data Cleaning &amp; Transformation</li>
+            <li><strong>Databases:</strong> PostgreSQL, MySQL</li>
+            <li><strong>Architecture:</strong> RESTful APIs, Microservices, Asynchronous Programming</li>
+            <li><strong>DevOps &amp; Cloud:</strong> Docker, Linux, Git, Message Queues (Kafka, Redis)</li>
+        </ul>
+    </section>
+
+    <!-- ── Professional Experience ── -->
+    <section>
+        <h2>Professional Experience</h2>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Senior Backend Developer <span class="entry-org">– Arho Technology, Ethiopia</span></span>
+                <span class="entry-date">2023 – 2025</span>
+            </div>
+            <p>Sole backend engineer responsible for end-to-end system architecture, API design, implementation, and deployment.</p>
             <ul>
-                <li>Developed License & Tax Management System for Afar Mine Resources Bureau</li>
-                <li>Created HR Management System for Afar Sharia Supreme Court</li>
-                <li>Built data collection API with DRF (40% performance improvement)</li>
-                <li>Consulted on 12+ client projects, delivering tailored technical solutions for government and private sector organizations</li>
-                <li>Conducted training programs for 15+ organizations on system implementation and software development best practices</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <h3>Afar Urban Development Bureau (2019–2023)</h3>
-            <ul>
-                <li>Led team of 7 developers in digital transformation initiative, overseeing sector-wide digitization of government services</li>
-                <li>Developed Construction Project Management System</li>
-                <li>Automated reporting systems (90% workload reduction)</li>
-                <li>Created File Management System (70% faster retrieval)</li>
-                
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>🎓 Education</h2>
-        <div class="card">
-            <h3>MSc in Computer Science (Ongoing)</h3>
-            <p>Samara University | 2024–2026 (Expected)</p>
-        </div>
-        <div class="card">
-            <h3>BSc in Electrical and Computer Engineering</h3>
-            <p>Woldia University (2014–2019)</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>🏆 Achievements</h2>
-        <div class="card">
-            <h3>2024 - 3rd National Cyber Talent Participant</h3>
-            <p>Certificate of Participation in Information Network Security Administration<br>
-            August 2024 - January 2025</p>
-            <ul>
-                <li>Selected among top cybersecurity talents nationwide</li>
-                <li>Advanced training in network security infrastructure and cyber defense mechanisms</li>
+                <li>Designed and developed scalable backend systems using <strong>Python, Django, and REST APIs</strong>, supporting thousands of records and complex business workflows.</li>
+                <li>Built a microservice-based <strong>Mining License Management System</strong>, covering license lifecycle management, compliance tracking, and reporting.</li>
+                <li>Developed an integrated <strong>Tax and Royalty Management System</strong>, enabling automated financial tracking and regulatory compliance.</li>
+                <li>Implemented <strong>asynchronous task processing</strong> using Celery and Redis to improve performance and system responsiveness.</li>
+                <li>Designed secure APIs using <strong>JWT authentication</strong> and role-based authorization.</li>
+                <li>Collaborated with frontend teams and third-party services to deliver production-ready solutions.</li>
             </ul>
         </div>
 
-        <div class="card">
-            <h3>2020 - Certificate of Recognition (Level 1)</h3>
-            <p>Awarded by Afar Urban Development and Construction Bureau for successfully automating project and file management processes.</p>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Software Engineer (Full Stack) <span class="entry-org">– Afar Urban Development and Construction Bureau</span></span>
+                <span class="entry-date">2019 – 2023</span>
+            </div>
+            <p>Led digital transformation initiatives as the primary developer.</p>
+            <ul>
+                <li>Developed enterprise web applications using <strong>Django (backend)</strong> and <strong>Vue.js (frontend)</strong>.</li>
+                <li>Built a <strong>Construction Project Management System</strong> that reduced reporting time by <strong>90%</strong>, enabling real-time decision-making.</li>
+                <li>Designed and implemented a <strong>File Management System</strong> that digitized manual workflows and improved document retrieval efficiency by <strong>70%</strong>.</li>
+                <li>Optimized database queries and data pipelines for large datasets.</li>
+            </ul>
         </div>
     </section>
 
-   <footer style="text-align: center; margin: 2rem 0; color: #666;">
-    <!-- Year will be injected by JavaScript -->
-</footer>
+    <!-- ── Key Projects ── -->
+    <section>
+        <h2>Key Projects</h2>
 
-<script>
-    // Dynamic year update
-    document.querySelector('footer').innerHTML = 
-        `© ${new Date().getFullYear()} Abdulwahid Ali. All rights reserved.`;
-</script>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Agazh AI</span>
+                <span class="entry-date">2025 – Present</span>
+            </div>
+            <div class="entry-subtitle">AI-Powered Educational Platform (GenAI)</div>
+            <ul>
+                <li>Developing an AI-driven learning platform leveraging <strong>Generative AI</strong> to deliver contextual explanations, question answering, and exam preparation.</li>
+                <li>Implemented prompt-based workflows to generate curriculum-aligned explanations and recommendations.</li>
+                <li>Designed backend APIs to support AI inference, content retrieval, and personalized learning flows.</li>
+                <li>Working with structured and unstructured datasets to improve AI response quality and relevance.</li>
+                <li>Built the platform with scalability in mind to transition from POC to production.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── Certifications ── -->
+    <section>
+        <h2>Certifications</h2>
+        <div class="edu-row">
+            <span><strong>National Cyber Talent Program – Certificate of Participation</strong><br>
+            Information Network Security Administration (INSA), Ethiopia</span>
+            <span>2024 – 2025</span>
+        </div>
+    </section>
+
+    <!-- ── Achievements ── -->
+    <section>
+        <h2>Achievements</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Level 1 Certificate of Recognition</span>
+                <span class="entry-date">2020</span>
+            </div>
+            <p>Afar Urban Development and Construction Bureau — Awarded for automating enterprise workflows and improving operational efficiency.</p>
+        </div>
+    </section>
+
+    <!-- ── Soft Skills ── -->
+    <section>
+        <h2>Soft Skills</h2>
+        <ul class="soft-list">
+            <li>Strong problem-solving and analytical thinking</li>
+            <li>Excellent communication in distributed, remote teams</li>
+            <li>Ability to convert business requirements into scalable technical solutions</li>
+            <li>Self-driven and comfortable working across time zones</li>
+        </ul>
+    </section>
+
+    <footer>
+        <!-- Year injected by JavaScript -->
+    </footer>
+
+    <script>
+        document.querySelector('footer').textContent =
+            '\u00A9 ' + new Date().getFullYear() + ' Abdulwahid Ali Ebrahim. All rights reserved.';
+    </script>
+
 </body>
 </html>
