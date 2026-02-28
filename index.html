@@ -4,320 +4,562 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdulwahid Ali Ebrahim – Senior Python (AI / Backend) Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a2b3c;
-            --accent: #2980b9;
-            --light-bg: #f4f7fa;
-            --border: #d1dce8;
-            --text: #333;
-            --muted: #666;
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --accent-light: #eff6ff;
+            --accent-dark: #1d4ed8;
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --muted: #64748b;
+            --tag-bg: #f1f5f9;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
             font-size: 15px;
             color: var(--text);
-            line-height: 1.65;
-            background: #fff;
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 36px 28px;
+            line-height: 1.7;
+            background: #f1f5f9;
+            min-height: 100vh;
         }
 
-        /* ── Header ── */
+        .page-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        /* ── Header / Hero ── */
         header {
-            text-align: center;
-            padding-bottom: 1.4rem;
-            border-bottom: 3px solid var(--primary);
-            margin-bottom: 1.8rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+            border-radius: 16px;
+            padding: 48px 40px 40px;
+            margin-bottom: 28px;
+            color: #fff;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(99,179,237,0.15) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         header h1 {
-            font-size: 2rem;
-            color: var(--primary);
-            letter-spacing: 0.5px;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #fff;
+            margin-bottom: 6px;
         }
 
         header .subtitle {
-            font-size: 1.05rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin: 6px 0 12px;
+            font-size: 1.1rem;
+            color: #93c5fd;
+            font-weight: 500;
+            margin-bottom: 28px;
         }
 
         .contact {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem 1.2rem;
-            font-size: 0.9rem;
-            color: var(--muted);
+            gap: 10px 20px;
         }
 
-        .contact a {
-            color: var(--accent);
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.88rem;
+            color: #cbd5e1;
+        }
+
+        .contact-item svg {
+            width: 15px;
+            height: 15px;
+            opacity: 0.8;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: #93c5fd;
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        .contact a:hover { text-decoration: underline; }
+        .contact-item a:hover { color: #bfdbfe; text-decoration: underline; }
+
+        /* ── Main card layout ── */
+        .card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
 
         /* ── Section headings ── */
-        section { margin-bottom: 1.8rem; }
-
-        section h2 {
-            font-size: 1rem;
+        .card h2 {
+            font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 5px;
-            margin-bottom: 1rem;
+            letter-spacing: 1.4px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── Summary ── */
+        .summary-text {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.75;
         }
 
         /* ── Skills grid ── */
-        .skills-list {
-            list-style: none;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.88rem;
+        }
+
+        .skill-item .skill-label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .skill-item .skill-value {
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ── Timeline entries ── */
+        .timeline { display: flex; flex-direction: column; gap: 24px; }
+
+        .tl-entry {
+            display: grid;
+            grid-template-columns: 8px 1fr;
+            gap: 0 20px;
+        }
+
+        .tl-dot-col {
             display: flex;
             flex-direction: column;
-            gap: 0.35rem;
+            align-items: center;
+            padding-top: 4px;
         }
 
-        .skills-list li { font-size: 0.93rem; }
-        .skills-list li strong { color: var(--primary); }
+        .tl-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
 
-        /* ── Experience / Project blocks ── */
-        .entry { margin-bottom: 1.2rem; }
+        .tl-line {
+            width: 2px;
+            flex: 1;
+            background: var(--border);
+            margin-top: 4px;
+        }
 
-        .entry-header {
+        .tl-entry:last-child .tl-line { display: none; }
+
+        .tl-body { padding-bottom: 4px; }
+
+        .tl-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: flex-start;
             flex-wrap: wrap;
-            gap: 0.25rem;
+            gap: 4px;
+            margin-bottom: 2px;
         }
 
-        .entry-title {
+        .tl-title {
             font-weight: 700;
             font-size: 0.97rem;
             color: var(--primary);
         }
 
-        .entry-org {
-            font-size: 0.93rem;
-            color: var(--muted);
-        }
-
-        .entry-date {
-            font-size: 0.87rem;
-            color: var(--muted);
+        .tl-date {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 600;
+            background: var(--accent-light);
+            padding: 2px 10px;
+            border-radius: 20px;
             white-space: nowrap;
         }
 
-        .entry-subtitle {
-            font-style: italic;
+        .tl-org {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .tl-summary {
             font-size: 0.9rem;
             color: var(--muted);
-            margin: 2px 0 6px;
+            margin-bottom: 8px;
         }
 
-        .entry p {
-            font-size: 0.93rem;
-            margin-bottom: 6px;
+        .tl-body ul {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--muted);
         }
 
-        .entry ul {
-            padding-left: 1.3rem;
-            font-size: 0.93rem;
-        }
+        .tl-body ul li { margin-bottom: 5px; }
+        .tl-body ul li strong { color: var(--text); }
 
-        .entry ul li { margin-bottom: 4px; }
+        .tl-tag {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin: 2px 2px 0 0;
+        }
 
         /* ── Education rows ── */
-        .edu-row {
+        .edu-list { display: flex; flex-direction: column; gap: 14px; }
+
+        .edu-item {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
             flex-wrap: wrap;
-            gap: 0.2rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.93rem;
+            gap: 4px;
+            padding: 14px 18px;
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
         }
 
-        .edu-row strong { color: var(--primary); }
-        .edu-row span { color: var(--muted); }
-
-        /* ── Soft skills ── */
-        .soft-list {
-            list-style: disc;
-            padding-left: 1.3rem;
+        .edu-degree {
+            font-weight: 600;
             font-size: 0.93rem;
+            color: var(--primary);
         }
 
-        .soft-list li { margin-bottom: 3px; }
+        .edu-school {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .edu-year {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 600;
+            background: var(--accent-light);
+            padding: 2px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            align-self: flex-start;
+        }
+
+        /* ── Cert / Achievement cards ── */
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 14px 18px;
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .cert-item .cert-name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.92rem;
+        }
+
+        .cert-item .cert-org {
+            font-size: 0.86rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .cert-year {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 600;
+            background: var(--accent-light);
+            padding: 2px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
 
         /* ── Footer ── */
         footer {
             text-align: center;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
+            margin-top: 32px;
             font-size: 0.82rem;
             color: var(--muted);
         }
 
         /* ── Responsive ── */
-        @media (max-width: 600px) {
-            body { padding: 20px 14px; }
-            header h1 { font-size: 1.5rem; }
-            .entry-header { flex-direction: column; }
+        @media (max-width: 680px) {
+            .page-wrapper { padding: 20px 12px 40px; }
+            header { padding: 32px 24px 28px; border-radius: 12px; }
+            header h1 { font-size: 1.7rem; }
+            .card { padding: 24px 20px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .tl-header { flex-direction: column; }
         }
     </style>
 </head>
 <body>
+<div class="page-wrapper">
 
-    <!-- ── Header ── -->
+    <!-- ── Header / Hero ── -->
     <header>
         <h1>Abdulwahid Ali Ebrahim</h1>
-        <div class="subtitle">Senior Python (AI / Backend) Developer</div>
+        <div class="subtitle">Senior Python Developer &mdash; AI &amp; Backend</div>
         <div class="contact">
-            <span>📧 <a href="mailto:abusabrina2158@gmail.com">abusabrina2158@gmail.com</a></span>
-            <span>📞 <a href="tel:+251921582249">+251-921-58-22-49</a></span>
-            <span>📍 Ethiopia (Remote)</span>
-            <span>🔗 <a href="https://linkedin.com/in/abdulwahid-ali" target="_blank" rel="noopener">LinkedIn</a></span>
-            <span>💻 <a href="https://github.com/awahid-ali" target="_blank" rel="noopener">GitHub</a></span>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <a href="mailto:abusabrina2158@gmail.com">abusabrina2158@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Ethiopia &mdash; Open to Remote</span>
+            </div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                <a href="https://linkedin.com/in/abdulwahid-ali" target="_blank" rel="noopener">linkedin.com/in/abdulwahid-ali</a>
+            </div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <a href="https://github.com/awahid-ali" target="_blank" rel="noopener">github.com/awahid-ali</a>
+            </div>
         </div>
     </header>
 
     <!-- ── Professional Summary ── -->
-    <section>
-        <h2>Professional Summary</h2>
-        <p>Senior Python Developer with 5+ years of experience designing and delivering scalable backend systems and AI-powered platforms. Strong background in Python, RESTful APIs, asynchronous programming, and data-driven applications. Experienced in building proof-of-concept (POC) solutions and evolving them into production-ready systems. Actively developing Generative AI solutions for education and enterprise workflows, with a focus on performance, security, and maintainability.</p>
-    </section>
-
-    <!-- ── Education ── -->
-    <section>
-        <h2>Education</h2>
-        <div class="edu-row">
-            <span><strong>MSc in Computer Science</strong> – Samara University, Ethiopia</span>
-            <span>2024 – 2026</span>
-        </div>
-        <div class="edu-row">
-            <span><strong>BSc in Electrical and Computer Engineering</strong> – Woldia University, Ethiopia</span>
-            <span>2014 – 2019</span>
-        </div>
-    </section>
+    <div class="card">
+        <h2>About</h2>
+        <p class="summary-text">Senior Python Developer with <strong>5+ years</strong> of experience designing and delivering scalable backend systems and AI-powered platforms. Strong background in Python, RESTful APIs, asynchronous programming, and data-driven applications. Experienced in evolving proof-of-concept solutions into production-ready systems. Actively building Generative AI products for education and enterprise workflows, with a focus on performance, security, and maintainability.</p>
+    </div>
 
     <!-- ── Technical Skills ── -->
-    <section>
+    <div class="card">
         <h2>Technical Skills</h2>
-        <ul class="skills-list">
-            <li><strong>Languages:</strong> Python, JavaScript, PHP</li>
-            <li><strong>Backend Frameworks:</strong> Django, Django REST Framework, FastAPI</li>
-            <li><strong>AI &amp; Data:</strong> Generative AI, Prompt Engineering, Pandas, NumPy, Data Cleaning &amp; Transformation</li>
-            <li><strong>Databases:</strong> PostgreSQL, MySQL</li>
-            <li><strong>Architecture:</strong> RESTful APIs, Microservices, Asynchronous Programming</li>
-            <li><strong>DevOps &amp; Cloud:</strong> Docker, Linux, Git, Message Queues (Kafka, Redis)</li>
-        </ul>
-    </section>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-label">Languages</div>
+                <div class="skill-value">Python, JavaScript, PHP</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">Backend Frameworks</div>
+                <div class="skill-value">Django, Django REST Framework, FastAPI</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">AI &amp; Data</div>
+                <div class="skill-value">Generative AI, Prompt Engineering, Pandas, NumPy, Data Transformation</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">Databases</div>
+                <div class="skill-value">PostgreSQL, MySQL</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">Architecture</div>
+                <div class="skill-value">RESTful APIs, Microservices, Async Programming</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">DevOps &amp; Cloud</div>
+                <div class="skill-value">Docker, Linux, Git, Kafka, Redis</div>
+            </div>
+        </div>
+    </div>
 
     <!-- ── Professional Experience ── -->
-    <section>
-        <h2>Professional Experience</h2>
+    <div class="card">
+        <h2>Experience</h2>
+        <div class="timeline">
 
-        <div class="entry">
-            <div class="entry-header">
-                <span class="entry-title">Senior Backend Developer <span class="entry-org">– Arho Technology, Ethiopia</span></span>
-                <span class="entry-date">2023 – 2025</span>
+            <div class="tl-entry">
+                <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+                <div class="tl-body">
+                    <div class="tl-header">
+                        <span class="tl-title">Senior Backend Developer</span>
+                        <span class="tl-date">2023 – 2025</span>
+                    </div>
+                    <div class="tl-org">Arho Technology, Ethiopia</div>
+                    <p class="tl-summary">Sole backend engineer responsible for end-to-end system architecture, API design, implementation, and deployment.</p>
+                    <ul>
+                        <li>Designed scalable backend systems using <strong>Python, Django, and REST APIs</strong>, supporting thousands of records and complex business workflows.</li>
+                        <li>Built a microservice-based <strong>Mining License Management System</strong>, covering lifecycle management, compliance tracking, and reporting.</li>
+                        <li>Developed an integrated <strong>Tax and Royalty Management System</strong> enabling automated financial tracking and regulatory compliance.</li>
+                        <li>Implemented <strong>asynchronous task processing</strong> with Celery and Redis to improve performance and responsiveness.</li>
+                        <li>Designed secure APIs using <strong>JWT authentication</strong> and role-based authorization.</li>
+                        <li>Collaborated with frontend teams and third-party services to deliver production-ready solutions.</li>
+                    </ul>
+                </div>
             </div>
-            <p>Sole backend engineer responsible for end-to-end system architecture, API design, implementation, and deployment.</p>
-            <ul>
-                <li>Designed and developed scalable backend systems using <strong>Python, Django, and REST APIs</strong>, supporting thousands of records and complex business workflows.</li>
-                <li>Built a microservice-based <strong>Mining License Management System</strong>, covering license lifecycle management, compliance tracking, and reporting.</li>
-                <li>Developed an integrated <strong>Tax and Royalty Management System</strong>, enabling automated financial tracking and regulatory compliance.</li>
-                <li>Implemented <strong>asynchronous task processing</strong> using Celery and Redis to improve performance and system responsiveness.</li>
-                <li>Designed secure APIs using <strong>JWT authentication</strong> and role-based authorization.</li>
-                <li>Collaborated with frontend teams and third-party services to deliver production-ready solutions.</li>
-            </ul>
-        </div>
 
-        <div class="entry">
-            <div class="entry-header">
-                <span class="entry-title">Software Engineer (Full Stack) <span class="entry-org">– Afar Urban Development and Construction Bureau</span></span>
-                <span class="entry-date">2019 – 2023</span>
+            <div class="tl-entry">
+                <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+                <div class="tl-body">
+                    <div class="tl-header">
+                        <span class="tl-title">Software Engineer (Full Stack)</span>
+                        <span class="tl-date">2019 – 2023</span>
+                    </div>
+                    <div class="tl-org">Afar Urban Development and Construction Bureau, Ethiopia</div>
+                    <p class="tl-summary">Led digital transformation initiatives as the primary developer.</p>
+                    <ul>
+                        <li>Developed enterprise web applications using <strong>Django</strong> (backend) and <strong>Vue.js</strong> (frontend).</li>
+                        <li>Built a <strong>Construction Project Management System</strong> that reduced reporting time by <strong>90%</strong>, enabling real-time decision-making.</li>
+                        <li>Designed a <strong>File Management System</strong> that digitized manual workflows and improved document retrieval efficiency by <strong>70%</strong>.</li>
+                        <li>Optimized database queries and data pipelines for large datasets.</li>
+                    </ul>
+                </div>
             </div>
-            <p>Led digital transformation initiatives as the primary developer.</p>
-            <ul>
-                <li>Developed enterprise web applications using <strong>Django (backend)</strong> and <strong>Vue.js (frontend)</strong>.</li>
-                <li>Built a <strong>Construction Project Management System</strong> that reduced reporting time by <strong>90%</strong>, enabling real-time decision-making.</li>
-                <li>Designed and implemented a <strong>File Management System</strong> that digitized manual workflows and improved document retrieval efficiency by <strong>70%</strong>.</li>
-                <li>Optimized database queries and data pipelines for large datasets.</li>
-            </ul>
+
         </div>
-    </section>
+    </div>
 
     <!-- ── Key Projects ── -->
-    <section>
+    <div class="card">
         <h2>Key Projects</h2>
+        <div class="timeline">
 
-        <div class="entry">
-            <div class="entry-header">
-                <span class="entry-title">Agazh AI</span>
-                <span class="entry-date">2025 – Present</span>
+            <div class="tl-entry">
+                <div class="tl-dot-col"><div class="tl-dot"></div></div>
+                <div class="tl-body">
+                    <div class="tl-header">
+                        <span class="tl-title">Agazh AI</span>
+                        <span class="tl-date">2025 – Present</span>
+                    </div>
+                    <div class="tl-org">AI-Powered Educational Platform (GenAI)</div>
+                    <ul>
+                        <li>Building an AI-driven learning platform leveraging <strong>Generative AI</strong> to deliver contextual explanations, Q&amp;A, and exam preparation.</li>
+                        <li>Implemented prompt-based workflows to generate curriculum-aligned recommendations.</li>
+                        <li>Designed backend APIs for AI inference, content retrieval, and personalized learning flows.</li>
+                        <li>Processing structured and unstructured datasets to improve AI response quality.</li>
+                        <li>Architected the platform to scale from POC to full production.</li>
+                    </ul>
+                    <div style="margin-top:10px">
+                        <span class="tl-tag">Generative AI</span>
+                        <span class="tl-tag">FastAPI</span>
+                        <span class="tl-tag">Python</span>
+                        <span class="tl-tag">PostgreSQL</span>
+                    </div>
+                </div>
             </div>
-            <div class="entry-subtitle">AI-Powered Educational Platform (GenAI)</div>
-            <ul>
-                <li>Developing an AI-driven learning platform leveraging <strong>Generative AI</strong> to deliver contextual explanations, question answering, and exam preparation.</li>
-                <li>Implemented prompt-based workflows to generate curriculum-aligned explanations and recommendations.</li>
-                <li>Designed backend APIs to support AI inference, content retrieval, and personalized learning flows.</li>
-                <li>Working with structured and unstructured datasets to improve AI response quality and relevance.</li>
-                <li>Built the platform with scalability in mind to transition from POC to production.</li>
-            </ul>
-        </div>
-    </section>
 
-    <!-- ── Certifications ── -->
-    <section>
-        <h2>Certifications</h2>
-        <div class="edu-row">
-            <span><strong>National Cyber Talent Program – Certificate of Participation</strong><br>
-            Information Network Security Administration (INSA), Ethiopia</span>
-            <span>2024 – 2025</span>
         </div>
-    </section>
+    </div>
 
-    <!-- ── Achievements ── -->
-    <section>
-        <h2>Achievements</h2>
-        <div class="entry">
-            <div class="entry-header">
-                <span class="entry-title">Level 1 Certificate of Recognition</span>
-                <span class="entry-date">2020</span>
+    <!-- ── Education ── -->
+    <div class="card">
+        <h2>Education</h2>
+        <div class="edu-list">
+            <div class="edu-item">
+                <div>
+                    <div class="edu-degree">MSc in Computer Science</div>
+                    <div class="edu-school">Samara University, Ethiopia</div>
+                </div>
+                <span class="edu-year">2024 – 2026</span>
             </div>
-            <p>Afar Urban Development and Construction Bureau — Awarded for automating enterprise workflows and improving operational efficiency.</p>
+            <div class="edu-item">
+                <div>
+                    <div class="edu-degree">BSc in Electrical and Computer Engineering</div>
+                    <div class="edu-school">Woldia University, Ethiopia</div>
+                </div>
+                <span class="edu-year">2014 – 2019</span>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ── Soft Skills ── -->
-    <section>
-        <h2>Soft Skills</h2>
-        <ul class="soft-list">
-            <li>Strong problem-solving and analytical thinking</li>
-            <li>Excellent communication in distributed, remote teams</li>
-            <li>Ability to convert business requirements into scalable technical solutions</li>
-            <li>Self-driven and comfortable working across time zones</li>
-        </ul>
-    </section>
+    <!-- ── Certifications & Achievements ── -->
+    <div class="card">
+        <h2>Certifications &amp; Achievements</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="cert-item">
+                <div>
+                    <div class="cert-name">National Cyber Talent Program – Certificate of Participation</div>
+                    <div class="cert-org">Information Network Security Administration (INSA), Ethiopia</div>
+                </div>
+                <span class="cert-year">2024 – 2025</span>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-name">Level 1 Certificate of Recognition</div>
+                    <div class="cert-org">Afar Urban Development and Construction Bureau — Awarded for automating enterprise workflows and improving operational efficiency.</div>
+                </div>
+                <span class="cert-year">2020</span>
+            </div>
+        </div>
+    </div>
 
-    <footer>
-        <!-- Year injected by JavaScript -->
-    </footer>
+    <footer id="footer"></footer>
 
-    <script>
-        document.querySelector('footer').textContent =
-            '\u00A9 ' + new Date().getFullYear() + ' Abdulwahid Ali Ebrahim. All rights reserved.';
-    </script>
+</div><!-- /.page-wrapper -->
+
+<script>
+    document.getElementById('footer').textContent =
+        '\u00A9 ' + new Date().getFullYear() + ' Abdulwahid Ali Ebrahim. All rights reserved.';
+</script>
 
 </body>
 </html>
